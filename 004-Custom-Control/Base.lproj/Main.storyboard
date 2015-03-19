@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Yr-ue-gnM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Face View Controller-->
+        <scene sceneID="3ra-It-efK">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="3Yr-ue-gnM" customClass="FaceViewController" customModule="_04_Custom_Control" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0fv-NE-e2l"/>
+                        <viewControllerLayoutGuide type="bottom" id="7zl-T8-ChH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RWZ-5i-feN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="2rf-Pu-Qtp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="616"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzw-MC-pEj" customClass="FaceView" customModule="_04_Custom_Control" customModuleProvider="target">
+                                <rect key="frame" x="10" y="-80" width="580" height="580"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="1dP-ZF-JD0"/>
+                                    <constraint firstAttribute="width" secondItem="Bzw-MC-pEj" secondAttribute="height" multiplier="1:1" id="wT0-Y7-AGW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1dP-ZF-JD0"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bzw-MC-pEj" firstAttribute="width" secondItem="RWZ-5i-feN" secondAttribute="width" constant="-20" id="5Vr-EE-ebC"/>
+                            <constraint firstAttribute="centerX" secondItem="Bzw-MC-pEj" secondAttribute="centerX" id="5oi-ob-x7Y"/>
+                            <constraint firstItem="7zl-T8-ChH" firstAttribute="top" secondItem="2rf-Pu-Qtp" secondAttribute="bottom" constant="-16" id="EiF-al-gQO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2rf-Pu-Qtp" secondAttribute="trailing" constant="-16" id="IAh-5c-T4F"/>
+                            <constraint firstItem="2rf-Pu-Qtp" firstAttribute="leading" secondItem="RWZ-5i-feN" secondAttribute="leadingMargin" constant="-16" id="T4g-wK-919"/>
+                            <constraint firstItem="7zl-T8-ChH" firstAttribute="top" secondItem="Bzw-MC-pEj" secondAttribute="bottom" constant="100" id="c9F-GZ-H9X"/>
+                            <constraint firstItem="2rf-Pu-Qtp" firstAttribute="top" secondItem="0fv-NE-e2l" secondAttribute="bottom" constant="-20" id="gx3-ML-DKW"/>
+                            <constraint firstAttribute="centerY" secondItem="Bzw-MC-pEj" secondAttribute="centerY" constant="-86.5" id="msD-hY-DRX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="msD-hY-DRX"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="faceView" destination="Bzw-MC-pEj" id="kKA-hl-8ul"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4S-Zg-JfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="922"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg.png" width="603" height="1041"/>
+    </resources>
+</document>
